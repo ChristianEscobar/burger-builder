@@ -19,11 +19,13 @@ class BurgerBuilder extends Component {
       cheese: 0,
       meat: 0
     },
-    totalPrice: 4,
-    purchaseable: false
+    totalPrice: 4, // starting price for burger
+    purchaseable: false // set to true when any of the ingredients count is > 0
   }
 
   updatePurchaseState = (ingredients) => {
+    // Object.keys creates an array with the keys as values:
+    // ['salad','bacon','cheese','meat']
     const sum = Object.keys(ingredients)
       .map(igKey => {
         return ingredients[igKey];
